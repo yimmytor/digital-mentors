@@ -2,6 +2,6 @@
 
 Web desarrollada para la agencia de desarrollo empresarial Digital Mentors.
 
-## Live Demo
+## Demo
 
 [Digital Mentores](https://digitalmentors.web.app/)
