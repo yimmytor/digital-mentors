@@ -1,0 +1,517 @@
+/* ----------------------- */
+/* Fuentes                 */
+/* ----------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+@font-face {
+    font-family: "Cooper Hewitt Light";
+    src: url("../fonts/CooperHewitt-Light.otf");
+}
+
+@font-face {
+    font-family: "Cooper Hewitt Medium";
+    src: url("../fonts/CooperHewitt-Medium.otf");
+}
+
+/* ----------------------- */
+/* Variables Globales      */
+/* ----------------------- */
+:root {
+    /* Colores */
+    --transparent: rgba(255, 255, 255, 0);
+
+    --white-001: rgba(255, 255, 255, 1);
+
+    --black-001: rgba(0, 0, 0, 1);
+    --black-002: rgba(0, 0, 0, 0.2);
+    --black-003: rgba(0, 0, 0, 0.3);
+
+    --gray-001: rgb(204, 204, 204);
+
+    --blue-001: rgba(25, 70, 167, 1);
+    --blue-002: rgba(25, 70, 167, 0.9);
+    --blue-003: rgba(25, 70, 167, 0.7);
+    --blue-004: rgba(37, 90, 196, 1);
+
+    --purple-001: rgba(162, 56, 187, 1);
+    --purple-002: rgba(162, 56, 187, 0.9);
+    --purple-003: rgba(105, 16, 122, 0.336);
+    --purple-004: rgba(105, 16, 122, 1);
+    --purple-005: rgba(105, 16, 122, 0.2);
+    --purple-006: rgba(162, 56, 187, 0.5);
+    --purple-007: rgba(162, 56, 187, 0.7);
+
+    --fucsia-001: rgba(203, 40, 139, 1);
+
+    --green-001: rgba(1, 140, 165, 0.6);
+    --green-002: rgba(1, 140, 165, 1);
+    --green-003: rgba(92, 251, 123, 1);
+
+    --yellow-001: rgba(255, 244, 94, 1);
+    --yellow-002: rgba(238, 134, 23, 1);
+    --yellow-003: rgba(180, 103, 20, 1);
+    --yellow-004: rgba(203, 160, 40, 1);
+
+    --red-001: rgb(177, 45, 45);
+
+    /* Gradientes */
+    --gradient-dm-001: linear-gradient(90deg, var(--purple-001) 0%, var(--blue-001) 100%);
+    --gradient-dm-002: linear-gradient(90deg, var(--purple-002) 0%, var(--blue-002) 100%);
+    --gradient-dm-003: linear-gradient(100deg, var(--purple-007) 0%, var(--blue-003) 50%);
+
+    /* Tamaños de Fuente */
+    --font-base: 16px;
+    --font-title: 2.1875rem;
+    --font-title-screen: 3rem;
+    --font-subtitle: 1.25rem;
+    --font-subtitle-screen: 1.5rem;
+}
+
+/* ----------------------- */
+/* Estilos Generales       */
+/* ----------------------- */
+* {
+    font-size: var(--font-base);
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.9;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+
+em {
+    font-weight: 700;
+}
+
+.contenedor {
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* ----------------------- */
+/* Estilos del Menu        */
+/* ----------------------- */
+#menu {
+    display: flex;
+    height: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--purple-001);
+    background: var(--gradient-dm-001)
+}
+
+#menu .logo-menu {
+    height: 2.8rem;
+    margin-left: 0.9375rem;
+}
+
+#menu nav {
+    display: flex;
+    height: 1.875rem;
+    flex-direction: row;
+    justify-content: flex-end;
+    border: none;
+}
+
+#menu nav #label-menu {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0.6rem;
+    font-size: 1.875rem;
+    color: var(--white-001);
+    cursor: pointer;
+}
+
+#menu nav #menu-bar:checked~.menu {
+    margin-left: 30%;
+}
+
+#menu nav .menu {
+    padding: 0.625rem 0em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 2.9375rem;
+    width: 100%;
+    margin-left: 200%;
+    text-align: left;
+    background: var(--purple-001);
+    background: var(--gradient-dm-002);
+    
+    -webkit-transition: all 0.5s ease-out;
+	-moz-transition: all 0.5s ease-out;
+	-ms-transition: all 0.5s ease-out;
+	-o-transition: all 0.5s ease-out; 
+    transition: all 0.5s ease-out;
+
+    z-index: 1;
+}
+
+#menu nav #menu-bar {
+    display: none;
+}
+
+#menu nav .menu li {
+    list-style: none;
+    width: 100%;
+}
+
+#menu nav .menu li:hover {
+    background: var(--purple-003);
+}
+
+#menu nav .menu li a {
+    display: inline-block;
+    padding: 0.9375rem 0.625rem;
+    width: 100%;
+    font-size: 1.05rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: var(--white-001);
+}
+
+/* ----------------------- */
+/* Estilos del Footer      */
+/* ----------------------- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3125rem 0.9375rem;
+    background: var(--blue-001);
+    color: var(--white-001);
+}
+
+footer .logo-footer {
+    display: none;
+}
+
+footer .copy {
+    text-align: left;
+}
+
+footer .copy .copy-min,
+footer .copy .year-copy {
+    font-size: 0.875rem;
+}
+
+footer .copy .copy-max {
+    display: none;
+}
+
+footer .social {
+    text-align: right;
+}
+
+footer .social a {
+    padding-left: 0.625rem;
+    font-size: 1.875rem;
+    color: var(--white-001);
+}
+
+/* ----------------------- */
+/* Media Queries           */
+/* ----------------------- */
+@media screen and (min-width: 320px) {
+
+    /* Estilos del Footer */
+    footer .social a {
+        padding-left: 0.1rem;
+        font-size: 1.7rem;
+    }
+}
+
+@media screen and (min-width: 400px) {
+
+    /* Estilos del Footer */
+    footer .copy .copy-min {
+        display: none;
+    }
+
+    footer .copy .copy-max {
+        display: block;
+    }    
+}
+
+@media screen and (min-width: 500px) {
+    /* Estilos del Footer */
+    footer .social a {
+        padding-left: 1rem;
+        font-size: 2rem;        
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+    /* Estilos Generales */
+    .contenedor {
+        width: 90%;
+    }
+
+    /* Estilos del Menu */
+    #menu nav {
+        margin-right: 0.8rem;
+    }
+
+    #menu nav #label-menu {
+        display: none;
+    }
+
+    #menu nav .menu {
+        position: relative;
+        margin: 0;
+        flex-direction: row;
+        background: none;
+        text-align: center;
+    }
+
+    #menu nav .menu li {
+        display: flex;
+        justify-content: center;
+        margin-left: 0.3125rem;
+        min-width: 3.75rem;
+
+        -webkit-transition: 0.4s all ease;
+	    -moz-transition: 0.4s all ease;
+	    -ms-transition: 0.4s all ease;
+	    -o-transition: 0.4s all ease; 
+        transition: 0.4s all ease;
+    }
+
+    #menu nav .menu li:hover {
+        background: none;
+    }
+
+    #menu nav .menu li a {
+        padding: 0.625rem;
+        color: var(--gray-001);
+    }
+
+    #menu nav .menu li a:hover {
+        color: var(--white-001);
+    }
+
+    #menu nav .menu li a.activo {
+        font-weight: 600;
+        color: var(--white-001);
+    }
+
+    /* Estilos del Footer */
+    footer .logo-footer {
+        display: block;
+    }
+
+    footer .logo-footer img {
+        height: 2.5rem;
+    }
+
+    footer .copy {
+        font-size: 0.875rem;
+    }
+
+    footer .social a {
+        padding-left: 1rem;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    /* Estilos del Menu */
+    #menu nav #menu-bar:checked~.menu {
+        margin-left: 50%;
+    }
+}
+
+/* ----------------------- */
+/* Estilos de Animación    */
+/* ----------------------- */
+.animado {
+    opacity: 0;
+    
+    -webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.entradaArriba {
+    -webkit-animation: entradaArriba 0.8s ease;
+    -moz-animation: entradaArriba 0.8s ease;  
+	-ms-zoom-animation: entradaArriba 0.8s ease;
+	-o-animation: entradaArriba 0.8s ease;
+    animation: entradaArriba 0.8s ease;
+}
+
+.entradaArriba-d1 {
+    -webkit-animation: entradaArriba 1s ease;
+    -moz-animation: entradaArriba 1s ease;  
+	-ms-zoom-animation: entradaArriba 1s ease;
+	-o-animation: entradaArriba 1s ease;
+    animation: entradaArriba 1s ease;
+}
+
+.entradaAbajo {
+    -webkit-animation: entradaAbajo 0.8s ease;
+    -moz-animation: entradaAbajo 0.8s ease;
+	-ms-zoom-animation: entradaAbajo 0.8s ease;
+	-o-animation: entradaAbajo 0.8s ease;
+    animation: entradaAbajo 0.8s ease;
+}
+
+.entradaAbajo-d1 {
+    -webkit-animation: entradaAbajo 1s ease;
+    -moz-animation: entradaAbajo 1s ease;
+	-ms-zoom-animation: entradaAbajo 1s ease;
+	-o-animation: entradaAbajo 1s ease;
+    animation: entradaAbajo 1s ease;
+}
+
+.entradaIzquierda {
+    -webkit-animation: entradaIzquierda 0.8s ease;
+    -moz-animation: entradaIzquierda 0.8s ease;
+	-ms-zoom-animation: entradaIzquierda 0.8s ease;
+	-o-animation: entradaIzquierda 0.8s ease;
+    animation: entradaIzquierda 0.8s ease;
+}
+
+.entradaIzquierda-d1 {
+    -webkit-animation: entradaIzquierda 1s ease;
+    -moz-animation: entradaIzquierda 1s ease;
+	-ms-zoom-animation: entradaIzquierda 1s ease;
+	-o-animation: entradaIzquierda 1s ease;
+    animation: entradaIzquierda 1s ease;
+}
+
+.entradaDerecha {
+    -webkit-animation: entradaDerecha 0.8s ease;
+    -moz-animation: entradaDerecha 0.8s ease;
+	-ms-zoom-animation: entradaDerecha 0.8s ease;
+	-o-animation: entradaDerecha 0.8s ease;
+    animation: entradaDerecha 0.8s ease;
+}
+
+.entradaDerecha-d1 {
+    -webkit-animation: entradaDerecha 1s ease;
+    -moz-animation: entradaDerecha 1s ease;
+	-ms-zoom-animation: entradaDerecha 1s ease;
+	-o-animation: entradaDerecha 1s ease;
+    animation: entradaDerecha 1s ease;
+}
+
+@keyframes entradaArriba {
+    0% {
+        opacity: 0;
+
+        -webkit-transform: translateY(-6.25rem);
+	    -moz-transform: translateY(-6.25rem);
+	    -ms-transform: translateY(-6.25rem);
+	    -o-transform: translateY(-6.25rem);
+        transform: translateY(-6.25rem);
+    }
+
+    100% {
+        opacity: 1;     
+
+        -webkit-transform: translateY(0);
+	    -moz-transform: translateY(0);
+	    -ms-transform: translateY(0);
+	    -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes entradaAbajo {
+    0% {
+        opacity: 0;
+        
+        -webkit-transform: translateY(6.25rem);
+	    -moz-transform: translateY(6.25rem);
+	    -ms-transform: translateY(6.25rem);
+	    -o-transform: translateY(6.25rem);
+        transform: translateY(6.25rem);
+    }
+
+    100% {
+        opacity: 1;
+
+        -webkit-transform: translateY(0);
+	    -moz-transform: translateY(0);
+	    -ms-transform: translateY(0);
+	    -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes entradaIzquierda {
+    0% {
+        opacity: 0;
+        
+        -webkit-transform: translateX(-6.25rem);
+	    -moz-transform: translateX(-6.25rem);
+	    -ms-transform: translateX(-6.25rem);
+	    -o-transform: translateX(-6.25rem);
+        transform: translateX(-6.25rem);
+    }
+
+    100% {
+        opacity: 1;
+
+        -webkit-transform: translateX(0);
+	    -moz-transform: translateX(0);
+	    -ms-transform: translateX(0);
+	    -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes entradaDerecha {
+    0% {
+        opacity: 0;
+
+        -webkit-transform: translateX(6.25rem);
+	    -moz-transform: translateX(6.25rem);
+	    -ms-transform: translateX(6.25rem);
+	    -o-transform: translateX(6.25rem);
+        transform: translateX(6.25rem);
+    }
+
+    100% {
+        opacity: 1;
+
+        -webkit-transform: translateX(0);
+	    -moz-transform: translateX(0);
+	    -ms-transform: translateX(0);
+	    -o-transform: translateX(0);
+        transform: translateX(0);
+    }
+}

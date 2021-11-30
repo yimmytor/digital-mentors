@@ -1,0 +1,166 @@
+/* ----------------------------- */
+/* Estilos de la pagina Nosotros */
+/* ----------------------------- */
+.contenedor {
+    max-width: 90%;
+}
+
+main .nosotros .header-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8.75rem;
+    margin-top: 4rem;
+    background: linear-gradient(var(--black-002) 0%, var(--black-002) 50%), url('../img/headers/nosotros.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+main .nosotros h1 {
+    margin: 0;
+    padding: 0;
+    font-size: var(--font-title);
+    text-shadow: 0.25rem 0.25rem 0.125rem var(--black-003);
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white-001);
+}
+
+main .nosotros article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    margin: 2rem 0;
+}
+
+main .nosotros article h2 {
+    max-width: 80%;
+    font-size: var(--font-subtitle);
+    font-family: "Cooper Hewitt Light", sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    color: var(--purple-001);
+}
+
+main .nosotros article ul {
+    list-style: none;
+}
+
+main .nosotros article ul li::before {
+    content: "\2022";
+    color: var(--purple-001);
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1rem;
+}
+
+main .nosotros article ul li {
+    font-style: italic;
+    line-height: 1.375rem;
+}
+
+main .nosotros article .ceo-name {
+    font-weight: 600;
+    color: var(--purple-001);
+}
+
+main .nosotros article .dm {
+    font-style: italic;
+    color: var(--blue-001);
+}
+
+main .nosotros article .dc {
+    font-style: italic;
+    color: var(--red-001);
+}
+
+main .nosotros article p {
+    line-height: 1.5625rem;
+}
+
+main .nosotros article figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.875rem;
+}
+
+main .nosotros article figure img {
+    height: 11.25rem;
+}
+
+main .nosotros article figure figcaption {
+    font-size: 0.95rem;
+    font-style: italic;
+    margin-top: 0.3125rem;
+}
+
+main .nosotros article .alianza {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .nosotros hr {
+    width: 50%;
+    height: 0.0688rem;
+    border: 0;
+    background: linear-gradient(90deg, var(--transparent) 0%, var(--green-002) 25%, var(--green-001) 50%, var(--green-002) 75%, var(--transparent) 100%);
+    opacity: 0.5;
+}
+
+/* ----------------------------- */
+/* Media Queries                 */
+/* ----------------------------- */
+@media screen and (min-width: 768px) {
+    body {
+        background-image: url('../img/backgrounds/nosotros.jpg');
+        background-position: center right;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .contenedor {
+        max-width: 100%;
+    }
+
+    main .nosotros {
+        max-width: 67vw;
+    }
+
+    main .nosotros .header-img {
+        display: block;
+        height: 0;
+        padding: 4.375rem 0 0 0;
+        margin-bottom: 5.625rem;
+        background: none;
+        text-align: center;
+    }
+
+    main .nosotros h1 {
+        font-size: var(--font-title-screen);
+        text-shadow: none;
+        color: var(--green-001);
+    }
+
+    main .nosotros article h2 {
+        font-size: var(--font-subtitle-screen);
+    }
+
+    main .nosotros article .alianza {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    main .nosotros article .alianza img {
+        margin-right: 1.875rem;
+    }
+}
